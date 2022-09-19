@@ -1,3 +1,3 @@
 export const config = {
-  BASE_URL: "http://localhost:8000/api/v1"
+  BASE_URL: `${process.env.REACT_APP_BASE_URL}/api/v1`
 }

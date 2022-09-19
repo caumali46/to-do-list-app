@@ -18,7 +18,7 @@ export default function App() {
       });
     }
     fetchAllTodos();
-  });
+  },[]);
   
   return (
     <div className="mx-auto mt-16 mb-12 max-w-2xl p-6 sm:mt-24">
