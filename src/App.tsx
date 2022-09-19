@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { TodosList } from "./components/TodosList";
-import { Title } from "./components/UI/Title";
-import { NewTodoControls } from "./components/NewTodoControls";
+import { Title } from "./components/shared/Title";
+import { AddNewTodo } from "./components/AddNewTodo";
 import { getTodoListService } from './utils/task.services';
 import { useStore } from "./store";
 
@@ -23,10 +23,10 @@ export default function App() {
   return (
     <div className="mx-auto mt-16 mb-12 max-w-2xl p-6 sm:mt-24">
       <Title
-        title="What do you have to do today?"
-        subtitle="Add your tasks"
+        title="What do you need to do?"
+        subtitle="What is your main focus for today"
       />
-      <NewTodoControls />
+      <AddNewTodo />
       <TodosList />
     </div>
   );

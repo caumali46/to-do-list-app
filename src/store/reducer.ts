@@ -8,8 +8,12 @@ export interface TodoInterface {
 
 // Reducers
 export const getAllTodo = (todos: TodoInterface[]): TodoInterface[] => {
-  return [...todos];
+  return [...todos.map((todo: any) => {
+    todo.isDone = todo.is_completed === 1 ? true: false;
+    return todo;
+  })];
 }
+
 export const addNewTodo = (todos: TodoInterface[], description: string): TodoInterface[] => {
   if (description.trim() !== "")
     return [

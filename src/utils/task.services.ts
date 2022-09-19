@@ -18,7 +18,7 @@ export const deleteTodoService = async (id: number) => {
 }
 
 export const addNewTodoService = async (dataObject: object) => {
-  return await fetch(`${config.BASE_URL}`, {
+  return await fetch(`${config.BASE_URL}/tasks`, {
     method: "POST",
     headers: {
       'Accept': 'application/json',
@@ -31,7 +31,7 @@ export const addNewTodoService = async (dataObject: object) => {
 }
 
 export const completeTodoService = async (id: number, dataObject: object) => {
-  return fetch(`${config.BASE_URL}`,{
+  return fetch(`${config.BASE_URL}/tasks/${id}`,{
       method:'PUT',
       headers:{ 'Content-Type':'application/json' },
       body:JSON.stringify(dataObject)

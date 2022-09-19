@@ -1,5 +1,5 @@
 import { TodoItem } from "./TodoItem";
-import { Message } from "./UI/Message";
+import { Message } from "./shared/Message";
 import { useStore } from "../store";
 
 export function TodosList() {
