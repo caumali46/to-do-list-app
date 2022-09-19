@@ -24,7 +24,7 @@ export default function App() {
     <div className="mx-auto mt-16 mb-12 max-w-2xl p-6 sm:mt-24">
       <Title
         title="What do you need to do?"
-        subtitle="What is your main focus for today"
+        subtitle="* What is your main focus for today"
       />
       <AddNewTodo />
       <TodosList />

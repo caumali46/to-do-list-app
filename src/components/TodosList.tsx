@@ -10,7 +10,7 @@ export function TodosList() {
       {todos.length > 0 ? (
         todos.map((todo) => <TodoItem key={todo.id} {...todo} />)
       ) : (
-        <Message text="You don't have any tasks anymore :(" />
+        <Message text="You don't have any tasks anymore!" />
       )}
     </>
   );

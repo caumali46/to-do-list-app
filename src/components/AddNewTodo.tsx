@@ -3,6 +3,7 @@ import { useStore } from "../store";
 import { Header } from "./shared/Header";
 import { Input } from "./shared/Input";
 import { Button } from "./shared/Button";
+import toast, { Toaster } from 'react-hot-toast';
 
 import { addNewTodoService } from '../utils/task.services';
 
@@ -22,7 +23,8 @@ export function AddNewTodo() {
       const dataObject = { description: inputValue };
 
       return await addNewTodoService(dataObject)
-        .then((res: any) => { })
+        .then((res: any) => { toast.success('Successfully added new task!'); })
+        .catch((e: any) => { toast.error(e?.message); })
         .finally(() => {
           setProcessingNewTodo(false);
         });
@@ -31,6 +33,10 @@ export function AddNewTodo() {
 
   return (
     <>
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+      />
       <Header>
         <Input
           value={inputValue}

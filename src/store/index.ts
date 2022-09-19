@@ -9,12 +9,6 @@ import {
 } from './reducer';
 
 // Interfaces
-// export interface TodoInterface {
-//   id: number;
-//   description: string;
-//   isDone: boolean;
-// }
-
 export interface StoreInterface {
   todos: TodoInterface[];
   inputValue: string;
@@ -24,39 +18,10 @@ export interface StoreInterface {
   toggleSingleTodo: (id: number) => void;
   removeSingleTodo: (id: number) => void;
 }
-
 const defaultTodos: TodoInterface[] = [
   { id: 1, description: "Prepare Breakfast", isDone: false },
 ];
 
-
-// Reducers
-// const getAllTodo = (todos: TodoInterface[]): TodoInterface[] => {
-//   return [...todos];
-// }
-// const addNewTodo = (todos: TodoInterface[], description: string): TodoInterface[] => {
-//   if (description.trim() !== "")
-//     return [
-//       ...todos,
-//       {
-//         id: Math.max(0, Math.max(...todos.map(({ id }) => id))) + 1,
-//         description,
-//         isDone: false,
-//       },
-//     ];
-//   return todos;
-// }
-
-// const toggleSingleTodo = (todos: TodoInterface[], id: number): TodoInterface[] => {
-//   return todos.map((todo) => ({
-//     ...todo,
-//     isDone: todo.id === id ? !todo.isDone : todo.isDone,
-//   }));
-// }
-
-// const removeSingleTodo = (todos: TodoInterface[], id: number): TodoInterface[] => {
-//   return todos.filter((todo) => todo.id !== id);
-// }
 
 // Store
 export const useStore = create<StoreInterface>((set) => {
